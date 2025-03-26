@@ -1,7 +1,9 @@
-name: My Frist Workflow
-on: push
+name: CI
+on: [push]
 jobs:
-  echo: 
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Hello, Github Actions!'
+      - uses: actions/checkout@v3
+      - name: Run a script
+        run: echo "Hello, GitHub Actions!"
