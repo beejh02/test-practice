@@ -1,0 +1,13 @@
+jobs:
+  verify-cyclonedx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # 스크립트 실행 권한 부여
+      - name: Make script executable
+        run: chmod +x ./verify-cyclonedx.sh
+
+      # 검증 실행 (FAILED시 여기서 파이프라인 중단됨)
+      - name: Verify CycloneDX Binary
+        run: ./verify-cyclonedx.sh --bin ./cyclonedx
