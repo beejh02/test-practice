@@ -1,6 +1,4 @@
 name: Verify CycloneDX Integrity
-
-# [!중요] 이 부분이 빠져서 에러가 난 것입니다.
 on:
   push:
     branches: [ "main" ]
